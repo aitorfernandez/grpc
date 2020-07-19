@@ -19,7 +19,7 @@ type ResolverBuilder struct {
 }
 
 // Build creates and returns a new resolver for the given target.
-func (b ResolverBuilder) Build(target resolver.Target, cc resolver.ClientConn, opts resolver.BuildOptions) resolver.Resolver {
+func (b ResolverBuilder) Build(target resolver.Target, cc resolver.ClientConn, opts resolver.BuildOptions) (resolver.Resolver, error) {
 	r := &Resolver{
 		Target: target,
 		CConn:  cc,
@@ -29,7 +29,7 @@ func (b ResolverBuilder) Build(target resolver.Target, cc resolver.ClientConn, o
 	}
 
 	r.Update()
-	return r
+	return r, nil
 }
 
 // Scheme returns the scheme supported.
