@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option go_package = "./proto";
+
+message Req {
+	string ping = 1;
+}
+
+message Res {
+	string pong = 1;
+}
+
+service Test {
+	rpc Send (Req) returns (Res);
+}
