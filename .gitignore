@@ -1,0 +1,7 @@
+*.log
+*.pid
+*.swo
+*.swp
+*.tmp
+.DS_Store
+.tags
